@@ -3,6 +3,8 @@
 # compiled output
 /dist
 /dist-server
+/www
+/www-server
 /tmp
 /out-tsc
 
