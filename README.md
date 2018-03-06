@@ -10,7 +10,7 @@ Run `yarn install` to download all dependent node modules to run this applicatio
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve --host 0.0.0.0 --port 81` for a dev server. Navigate to `http://localhost:81/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
