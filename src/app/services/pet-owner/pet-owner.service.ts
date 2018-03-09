@@ -17,15 +17,7 @@ export class PetOwnerService implements IPetOwner {
         private _errHandler: ErrorHandlerService
     ) {}
 
-    getPetOwner(): Observable<PetOwner[]> {
-        return this._http
-            .get(this._getUrl)
-            .catch((err: Response | any) => {
-                return this._errHandler.handleError(
-                    err,
-                    'Could not load Pet Owner details. Sorry!!! Please tray again later...'
-                );
-            })
-            .map(data => data.json() as PetOwner[]);
+    getPetOwner() {
+        return this._http.get(this._getUrl, { responseType: 'json' });
     }
 }
