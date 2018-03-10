@@ -1,15 +1,15 @@
-import { ReducerAction } from '../../models/reducerAction.model';
-import { IPetOwner } from '../../services/pet-owner/ipet-owner';
-import { Injectable } from '@angular/core';
-import { PetOwner } from '../../models/pet-owner.model';
-import { ActionType } from '../action-type.enum';
+import { ReducerAction } from "../../models/reducerAction.model";
+import { IPetOwner } from "../../services/pet-owner/ipet-owner";
+import { Injectable } from "@angular/core";
+import { PetOwner } from "../../models/pet-owner.model";
+import { ActionType } from "../action-type.enum";
 
 @Injectable()
 export class PetOwnerActions {
     constructor(private _petOwner: IPetOwner) {}
 
     public gotPetOwners(petOwners: PetOwner[]) {
-        console.log(JSON.stringify(petOwners));
+        // console.log(JSON.stringify(petOwners));
         return {
             type: ActionType.PETOWNER_LOAD,
             obj: petOwners

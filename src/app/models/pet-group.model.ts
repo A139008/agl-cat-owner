@@ -1,4 +1,4 @@
-import { Pet } from './Pet.model';
+import { Pet } from './pet.model';
 
 export interface PetGroup {
     groupName: string;
