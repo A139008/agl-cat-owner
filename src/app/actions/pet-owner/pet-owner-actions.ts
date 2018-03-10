@@ -1,8 +1,10 @@
-import { ReducerAction } from "../../models/reducerAction.model";
-import { IPetOwner } from "../../services/pet-owner/ipet-owner";
-import { Injectable } from "@angular/core";
-import { PetOwner } from "../../models/pet-owner.model";
-import { ActionType } from "../action-type.enum";
+import { ReducerAction } from '../../models/reducerAction.model';
+import { IPetOwner } from '../../services/pet-owner/ipet-owner';
+import { Injectable } from '@angular/core';
+// import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/map';
+import { PetOwner } from '../../models/pet-owner.model';
+import { ActionType } from '../action-type.enum';
 
 @Injectable()
 export class PetOwnerActions {
@@ -21,6 +23,7 @@ export class PetOwnerActions {
         return dispatch => {
             return this._petOwner
                 .getPetOwner()
+                .map(data => data as PetOwner[])
                 .subscribe((petOwners: PetOwner[]) =>
                     dispatch(this.gotPetOwners(petOwners))
                 );

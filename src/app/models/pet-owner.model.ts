@@ -5,5 +5,4 @@ export interface PetOwner {
     gender: string;
     age: number;
     pets: Pet[];
-    _isS;
 }
