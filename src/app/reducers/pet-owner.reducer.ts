@@ -6,7 +6,8 @@ import { PetOwner } from '../models/pet-owner.model';
 const petOwnerReducer = (state: any[] = [], action: ReducerAction) => {
     switch (action.type) {
         case ActionType.PETOWNER_LOAD:
-            console.log(JSON.stringify(action.obj as PetOwner[]));
+            console.log('state: ' + JSON.stringify(state));
+            console.log('\ndata: ' + JSON.stringify(action.obj as PetOwner[]));
             return action.obj as PetOwner[];
         default:
             return state;

@@ -1,7 +1,13 @@
 <p>All Cats by their Owner's gender</p>
-<!-- {{ catsByOwnerGenderStr }} -->
+<ul *ngFor='let ownerGender of petOwners | async'>
+    <!--  'let ownerGender of catsByOwnerGender'> -->
+    <li>{{ownerGender.name}} </li>
 
-<ul *ngFor='let ownerGender of catsByOwnerGender'>
+</ul>
+
+
+<ul *ngFor='let ownerGender of catsByOwnerGender | async'>
+    <!--  'let ownerGender of catsByOwnerGender'> -->
     <li>{{ownerGender.groupName}}
         <ul *ngFor='let cat of ownerGender.pets'>
             <li>{{cat}}</li>

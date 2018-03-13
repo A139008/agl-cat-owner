@@ -2,6 +2,7 @@ import { ReducerAction } from '../../models/reducerAction.model';
 import { IPetOwner } from '../../services/pet-owner/ipet-owner';
 import { Injectable } from '@angular/core';
 // import 'rxjs/add/operator/switchMap';
+// import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { PetOwner } from '../../models/pet-owner.model';
 import { ActionType } from '../action-type.enum';
@@ -10,7 +11,7 @@ import { ActionType } from '../action-type.enum';
 export class PetOwnerActions {
     constructor(private _petOwner: IPetOwner) {}
 
-    public gotPetOwners(petOwners: PetOwner[]) {
+    private gotPetOwners(petOwners: PetOwner[]): ReducerAction {
         // console.log(JSON.stringify(petOwners));
         return {
             type: ActionType.PETOWNER_LOAD,
@@ -24,9 +25,10 @@ export class PetOwnerActions {
             return this._petOwner
                 .getPetOwner()
                 .map(data => data as PetOwner[])
-                .subscribe((petOwners: PetOwner[]) =>
-                    dispatch(this.gotPetOwners(petOwners))
-                );
+                .subscribe((petOwners: PetOwner[]) => {
+                    console.log('actionData: ' + JSON.stringify(petOwners));
+                    return dispatch(this.gotPetOwners(petOwners));
+                });
         };
     }
 }
