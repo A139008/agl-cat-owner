@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import { PetOwners } from './pet-owner.reducer';
+import { petOwners } from './pet-owner.reducer';
 
 const rootReducer = combineReducers({
-    PetOwners
+    petOwners
 });
 
 export default rootReducer;

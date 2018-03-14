@@ -17,7 +17,6 @@ export class PetOwnerActions {
             type: ActionType.PETOWNER_LOAD,
             obj: petOwners
         } as ReducerAction;
-        // return { type: ActionType.PETOWNER_LOAD, petOwners };
     }
 
     public getPetOwners() {
@@ -26,7 +25,7 @@ export class PetOwnerActions {
                 .getPetOwner()
                 .map(data => data as PetOwner[])
                 .subscribe((petOwners: PetOwner[]) => {
-                    console.log('actionData: ' + JSON.stringify(petOwners));
+                    // console.log('actionData: ' + JSON.stringify(petOwners));
                     return dispatch(this.gotPetOwners(petOwners));
                 });
         };
