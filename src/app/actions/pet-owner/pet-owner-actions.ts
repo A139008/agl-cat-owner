@@ -15,7 +15,7 @@ export class PetOwnerActions {
         // console.log(JSON.stringify(petOwners));
         return {
             type: ActionType.PETOWNER_LOAD,
-            obj: petOwners
+            payload: petOwners
         } as ReducerAction;
     }
 

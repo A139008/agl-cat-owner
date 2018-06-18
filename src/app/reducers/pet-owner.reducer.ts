@@ -8,7 +8,7 @@ const petOwnerReducer = (state: any[] = [], action: ReducerAction) => {
         case ActionType.PETOWNER_LOAD:
             // console.log('state: ' + JSON.stringify(state));
             // console.log('\ndata: ' + JSON.stringify(action.obj as PetOwner[]));
-            return action.obj as PetOwner[];
+            return action.payload as PetOwner[];
         default:
             return state;
     }
