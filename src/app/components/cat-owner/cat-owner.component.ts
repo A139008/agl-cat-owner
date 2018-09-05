@@ -24,9 +24,9 @@ export class CatOwnerComponent implements OnInit {
 
     ngOnInit() {
         this.ngRedux.dispatch<any>(this._petOwnerActions.getPetOwners());
-        this.petOwners.subscribe(petOwners => {
+        this.petOwners.subscribe(allPetOwners => {
             // console.log('componentData: ' + JSON.stringify(petOwners));
-            this.catsByOwnerGender = this.getCatsByOwnerGender(petOwners);
+            this.catsByOwnerGender = this.getCatsByOwnerGender(allPetOwners);
         });
     }
 
